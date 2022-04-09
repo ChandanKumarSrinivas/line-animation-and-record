@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>line animation and record</title>
+        <style>
+
+
+            table, th, td, tr{
+                            border: 1px solid white;
+                            /* border-style: dotted; */
+                            border-radius: 3px;
+                            border-collapse: collapse;
+                            padding: 2px 10px 2px 10px; 
+                            min-width: 98.5px;
+                            max-width: 360px;
+            }
+
+            td,th{
+                background-color: #96D4D4;
+                /* border-radius: 5px; */
+                text-align: left;
+            }
+
+            td{
+                overflow-x: scroll;
+            }
+
+            td::-webkit-scrollbar{
+                height: 0%;
+                width: 0%;
+            }
+
+            div::-webkit-scrollbar{
+                height: 0%;
+                width: 0%;
+            }
+
+            /* th,td{
+                border-radius: 8px;
+            } */
+
+            body{
+                font-family: satoshi;
+            }
+
+            #div{
+                margin: 0%;
+                padding: 0%;
+                width: auto;
+                height: 600px;
+                border: 5px solid rgb(0, 0, 0);
+                border-radius: 8px;
+            }
+
+            #box{
+                background-color: rgb(255, 255, 255);
+                height: 7px;
+                width: 7px;
+                position: absolute;
+                margin: 0%;
+                padding: 0%;
+                /* animation-name: box; */
+                margin-left: 98.4%;
+                margin-top: 44.2%;
+                /* animation-duration: 20s; */
+                /* animation-iteration-count: infinite; */
+                animation-timing-function: linear;
+                animation: box 30s infinite;
+                border-radius: -5px;
+            }
+
+            @keyframes box{
+                0% {
+                    margin-left: 0%;
+                    margin-top: 0%;
+                    position: absolute;
+                animation-timing-function: linear;
+                }
+
+                33% {
+                    margin-left: 98.4%;
+                    margin-top: 0%;
+                    position: absolute;
+                animation-timing-function: linear;
+                }
+
+                50% {
+                    margin-left: 98.4%;
+                    margin-top: 44.2%;
+                    position: absolute;
+                animation-timing-function: linear;
+                }
+
+                83% {
+                    margin-left: 0%;
+                    margin-top: 44.2%;
+                    position: absolute;
+                animation-timing-function: linear;
+                }
+
+                100% {
+                    margin-left: 0%;
+                    margin-top: 0%;
+                    position: absolute;
+                animation-timing-function: linear;
+                }
+
+            }
+
+        </style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelector('form').onsubmit = () => {
+        // event.preventDefault();
+            const task = document.querySelector('#data').value;
+            const tr=document.createElement('tr');
+            const tdr=document.createElement('td');
+            const tdt=document.createElement('td');
+            
+            const d= new Date();
+            let h = d.getHours();
+            let m = d.getMinutes();
+            let s = d.getSeconds();
+            let time = h + ":" + m + ":" + s;
+
+            tdt.innerHTML=time;
+            tdr.innerHTML=task;
+            
+            tr.append(tdr);
+            tr.append(tdt)
+            // console.log(task)
+            document.querySelector('.clt').append(tr);
+
+            return false;
+        }
+    });
+</script>
+
+    </head>
+
+
+
+
+
+    <body>
+        
+        <div id="box"></div>
+        <div id="box" style="animation-delay: 0.03s;"></div>
+        <div id="box" style="animation-delay: 0.06s;"></div>
+        <div id="box" style="animation-delay: 0.09s;"></div>
+        <div id="box" style="animation-delay: 0.12s;"></div>
+        <div id="box" style="animation-delay: 0.15s;"></div>
+        <div id="box" style="animation-delay: 0.18s;"></div>
+        <div id="box" style="animation-delay: 0.21s;"></div>
+        <div id="box" style="animation-delay: 0.24s;"></div>
+        <div id="box" style="animation-delay: 0.27s;"></div>
+        <div id="box" style="animation-delay: 0.30s;"></div>
+        <div id="box" style="animation-delay: 0.33s;"></div>
+        <div id="box" style="animation-delay: 0.36s;"></div>
+        <div id="box" style="animation-delay: 0.39s;"></div>
+        <div id="box" style="animation-delay: 0.42s;"></div>
+        <div id="box" style="animation-delay: 0.45s;"></div>
+        <div id="box" style="animation-delay: 0.48s;"></div>
+        <div id="box" style="animation-delay: 0.51s;"></div>
+        <div id="box" style="animation-delay: 0.54s;"></div>
+        <div id="div">
+
+            <div style="margin: 2% auto auto auto; width: fit-content; max-height: 500px; overflow-y: scroll;">
+                <!-- 2 auto auto 40 -->
+                <h1 style="text-align: center;">Records</h1>
+                <form style="margin: auto; width: fit-content;">
+                    <input type="search" id="data">
+                    <input type="submit">
+                </form>
+                <table class="clt" style="margin-top: 1%; border-radius: 5px;">
+                    <tr style="text-align: left;">
+                        <th>Record</th>
+                        <th>Time</th>
+                    </tr>
+                    <!-- <td>this is list</td> -->
+                </table>
+                <!-- <script type="text/javascript" src="record.js"></script> -->
+                </div>
+
+        </div>
+
+    </body>
+</html>
